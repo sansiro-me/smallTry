@@ -1,0 +1,12 @@
+{
+  "name": "hello-cli",
+  "version": "1.0.0",
+  "bin": {
+    "san": "index.js"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "commander": "^2.19.0",
+    "shelljs": "^0.8.2"
+  }
+}
