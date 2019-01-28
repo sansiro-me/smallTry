@@ -25,8 +25,6 @@
 
 
 const readline = require('readline');
-const unload = ' ';
-const loaded = '=';
 
 const line = readline.createInterface({
   input: process.stdin,
@@ -36,9 +34,19 @@ const line = readline.createInterface({
 line.question('你要对谁说？  ', answer => {
   getAsyncData().then(() => {
     console.log(`你好啊，${answer}`);
-    process.exit(0);
+    // process.exit(0);
+    line.question('然后再要对谁说？  ', answer => {
+      getAsyncData().then(() => {
+        console.log(`你好啊哈哈哈，${answer}`);
+        process.exit(0);
+      })
+    });
   })
 });
+
+
+
+
 
 function getAsyncData() {
   return new Promise((res, rej) => {
